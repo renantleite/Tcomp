@@ -34,13 +34,13 @@ def main():
 
     # Simula o AFD com a cadeia fornecida
     resultado, transicoes = simular_afd_com_transicoes(dfa, input_string)
-
+    print(f"cadeia: {input_string}")
     # Exibe o resultado da simulação
     if resultado:
-        print(f"A cadeia '{input_string}' foi aceita pelo AFD!")
+        print(f"Resultado: aceita")
     else:
-        print(f"A cadeia '{input_string}' foi rejeitada pelo AFD!")
+        print(f"Resultado: rejeitada ")
 
-
+    print(f"Arquivos gerados: afd_original.txt , afd_complemento.txt, afd_invertido.txt ")
 if __name__ == "__main__":
     main()
