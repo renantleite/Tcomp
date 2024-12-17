@@ -53,3 +53,9 @@ def salvar_afd_em_arquivo(afd, nome_arquivo):
         for (estado, simbolo), proximo_estado in afd.transicoes.items():
             f.write(f"{set(estado)} -- {simbolo} --> {set(proximo_estado)}\n")
     print(f"Resultado salvo em {nome_arquivo}")
+def salvar_afn_sem_cadeia(nome_arquivo_entrada, nome_arquivo_saida):
+    with open(nome_arquivo_entrada, 'r') as entrada, open(nome_arquivo_saida, 'w') as saida:
+        for line in entrada:
+            if line.startswith("W:"):  # Ignorar a linha que contém a cadeia de entrada
+                continue
+            saida.write(line)  # Copiar todas as outras linhas
